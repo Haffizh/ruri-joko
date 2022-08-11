@@ -50,7 +50,9 @@
             </h2>
             <h5 class="mt-5 mb-5">Kepada Yth. <br>
                 <span>Bapak/Ibu/Saudara/i</span><br>
-                <span style="margin-top: -5%; font-weight: bold; ">Haffizh & Partner</span>
+                <span style="margin-top: -5%; font-weight: bold; ">
+                    <label id="nama">Ruri & Joo</label>
+                </span>
             </h5>
             <h5 class="font-weight date-sparator">28 Agustus 2022</h5>
             <br>
@@ -443,7 +445,18 @@ Ya Allah, perkenankanlah kami merangkai kasih sayang yang Kau ciptakan di antara
             <link rel="stylesheet" href="cdn.plyr.io/3.6.8/plyr.css" >
     <script src=cdn.plyr.io/3.6.8/plyr.js></script>
     <script src=js/musicv2e209.js?v=1.0.0></script>
-        <script src=cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js></script>
+    <script src=cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js></script>
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const namanya = urlParams.get('nama')
+        console.log(namanya);
+        if (namanya == '') {
+            document.getElementById("nama").innerText = '-';
+        }else{
+            document.getElementById("nama").innerText = urlParams.get('nama');
+        }
+    </script>
 <script>
     var countDownDate=new Date("28 August 2022 08:00:00").getTime(),x=setInterval(function(){
         var e=(new Date).getTime(),n=countDownDate-e,t=Math.floor(n/864e5),a=Math.floor(n%864e5/36e5),o=Math.floor(n%36e5/6e4),m=Math.floor(n%6e4/1e3);
